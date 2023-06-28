@@ -1,5 +1,5 @@
 # chargen
-daisy chainsaw random character generator
+[daisy chainsaw](https://bighog.games/games/daisychainsaw.html) random character generator
 
 ## example output
 
