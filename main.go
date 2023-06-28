@@ -56,11 +56,11 @@ func main() {
 	if p.Spells != 0 {
 
 	}
-	var primInfo = lipgloss.JoinVertical(lipgloss.Center, weapons, statPrio, lipgloss.JoinHorizontal(lipgloss.Center, hp, speed, spn))
 	var statBlock = lipgloss.JoinHorizontal(lipgloss.Center, charm, heart, focus, power)
+	var primInfo = lipgloss.JoinVertical(lipgloss.Center, weapons, statPrio, statBlock, lipgloss.JoinHorizontal(lipgloss.Center, hp, speed, spn))
 	var moreInfo = lipgloss.JoinVertical(lipgloss.Left, tr, qu, ab, spdis)
 
-	var charSheet = gen.StyleCuteBorder.Render(lipgloss.JoinVertical(lipgloss.Center, lipgloss.JoinVertical(lipgloss.Center, primInfo, statBlock, moreInfo)))
+	var charSheet = gen.StyleCuteBorder.Render(lipgloss.JoinVertical(lipgloss.Center, primInfo, moreInfo))
 	block := lipgloss.PlaceHorizontal(80, lipgloss.Center, charSheet)
 
 	fmt.Print(block)
