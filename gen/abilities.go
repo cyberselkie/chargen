@@ -22,6 +22,7 @@ func abilitySelect(p *Profile) string {
 	tier := "t1"
 
 	a := unmarshal(ajson, fmt.Sprintf("%s.%s.#", w, tier)).Int()
+	fmt.Print(a)
 	i := randNum(int(a))
 	abilityN := unmarshal(ajson, fmt.Sprintf("%s.%s.%s.name", w, tier, strconv.Itoa(i))).Str
 	abilityP := unmarshal(ajson, fmt.Sprintf("%s.%s.%s.prose", w, tier, strconv.Itoa(i))).Str
