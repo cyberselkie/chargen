@@ -1,13 +1,16 @@
 package gen
 
 import (
+	"embed"
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 )
 
-var ajson, aerr = os.ReadFile("gen/data/abilities.json")
+//go:embed data/abilities.json
+var abilityFS embed.FS
+
+var ajson, aerr = abilityFS.ReadFile("data/abilities.json")
 
 func flipWeapon(p *Profile) string {
 	var s = []string{p.W1, p.W2}

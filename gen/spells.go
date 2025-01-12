@@ -1,13 +1,16 @@
 package gen
 
 import (
+	"embed"
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 )
 
-var sjson, serr = os.ReadFile("gen/data/spells.json")
+//go:embed data/spells.json
+var spellsFS embed.FS
+
+var sjson, serr = spellsFS.ReadFile("data/spells.json")
 
 func spellSelect(p *Profile) string {
 	var s string

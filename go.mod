@@ -23,5 +23,4 @@ require (
 	github.com/charmbracelet/lipgloss v0.7.1
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
-	golang.org/dl v0.0.0-20241213165225-4b9e3f9eb6e1
 )

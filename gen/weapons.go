@@ -1,17 +1,21 @@
 package gen
 
 import (
+	"embed"
 	"fmt"
-	"os"
 	"strconv"
 
 	"github.com/tidwall/gjson"
 	"github.com/yektadev/rango"
 )
 
+//go:embed data/weapons.json
+var weaponsFS embed.FS
+
+var json, err = weaponsFS.ReadFile("data/weapons.json")
+
 var (
-	WEAPONS   = []string{"Baseball Bat", "Brass Knuckles", "Chainsaw", "Gun", "Knives", "Hat", "Katana", "Knives", "Microphone", "Roller Skates", "Whip"}
-	json, err = os.ReadFile("gen/data/weapons.json")
+	WEAPONS = []string{"Baseball Bat", "Brass Knuckles", "Chainsaw", "Gun", "Knives", "Hat", "Katana", "Knives", "Microphone", "Roller Skates", "Whip"}
 )
 
 func randNum(i int) int {
